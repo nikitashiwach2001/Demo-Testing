@@ -14,10 +14,10 @@ pipeline {
 	    	// Deploy Stages
 	        stage('Deploy Tests') {
 	            steps {
-	                echo "Deploying ${main} to orchestrator"
+	                echo 'Deploying ${main} to orchestrator'
 	                UiPathDeploy (
 	                packagePath: "Output\\Tests\${env.BUILD_NUMBER}",
-	                orchestratorAddress: "${https://cloud.uipath.com/ssstkwxnjg/nikita/orchestrator_/}",
+	                orchestratorAddress: '${https://cloud.uipath.com/ssstkwxnjg/nikita/orchestrator_/}',
 	                orchestratorTenant: "${nikita}",
 	                folderName: "${IT}",
 	                environments: 'INT',
