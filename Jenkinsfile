@@ -64,7 +64,7 @@ pipeline {
 	        stage('Preparing'){
 	            steps {
 	                echo "Jenkins Home ${env.JENKINS_HOME}"
-	                echo "Jenkins URL ${env.http://localhost:8080/job/Testing/configure}"
+	                echo 'Jenkins URL ${env.http://localhost:8080/job/Testing/configure}'
 	                echo "Jenkins JOB Number ${env.7}"
 	                echo "Jenkins JOB Name ${env.testing}"
 	                echo "GitHub BranhName ${env.main}"
@@ -102,7 +102,7 @@ pipeline {
 	                echo "Deploying ${main} to UAT "
                 UiPathDeploy (
                 packagePath: "Output\\${env.1.0.114420490}",
-                orchestratorAddress: "${https://cloud.uipath.com/ssstkwxnjg/nikita/orchestrator_}",
+                orchestratorAddress: '${https://cloud.uipath.com/ssstkwxnjg/nikita/orchestrator_}',
                 orchestratorTenant: "${nikita}",
                 folderName: "${IT}",
 //                 environments: 'DEV',
