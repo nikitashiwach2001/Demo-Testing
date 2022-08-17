@@ -10,10 +10,8 @@ pipeline {
 	
 
 	    stages {
-	
-
-	      		
-	         // Deploy Stages
+	    
+	    	// Deploy Stages
 	        stage('Deploy Tests') {
 	            steps {
 	                echo "Deploying ${main} to orchestrator"
@@ -23,25 +21,13 @@ pipeline {
 	                orchestratorTenant: "${nikita}",
 	                folderName: "${IT}",
 	                environments: 'INT',
-	               
 	                credentials: Token(accountName: "${nikita}", credentialsId: 'YySkJ9PwEoXhl32OqKGBjwM5jiX7DKiHLYFnK6zeL6HNF'),
 					traceLevel: 'None',
-					entryPointPaths: 'TestCase1.xaml'
-	
-
-					)
-	            }
-			
+					entryPointPaths: 'TestCase1.xaml')
+	            	}
 			}
-			
-			
-	    	      
-	    }
+	    		}
 	
-
-	
-
-	    // 
 	    post {
 	        success {
 	            echo 'Deployment has been completed!'
