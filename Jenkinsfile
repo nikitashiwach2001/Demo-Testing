@@ -16,7 +16,7 @@ pipeline {
 	            steps {
 	                echo 'Deploying ${main} to orchestrator'
 	                UiPathDeploy (
-	                packagePath: "Output\\Tests\${env.BUILD_NUMBER}",
+	                packagePath: "Output\\Tests\${env.1.0.114420490}",
 	                orchestratorAddress: '${https://cloud.uipath.com/ssstkwxnjg/nikita/orchestrator_/}',
 	                orchestratorTenant: "${nikita}",
 	                folderName: "${IT}",
@@ -33,7 +33,7 @@ pipeline {
 	            echo 'Deployment has been completed!'
 	        }
 	        failure {
-	          echo "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.JOB_DISPLAY_URL})"
+	          echo "FAILED: Job '${env.JOB_NAME} [${env.1.0.114420490}]' (${env.JOB_DISPLAY_URL})"
 	        }
 	        always {
 	            /* Clean workspace if success */
