@@ -65,7 +65,7 @@ pipeline {
 	            steps {
 	                echo "Jenkins Home ${env.JENKINS_HOME}"
 	                echo 'Jenkins URL ${env.http://localhost:8080/job/Testing/configure}'
-	                echo "Jenkins JOB Number ${env.7}"
+	                echo "Jenkins JOB Number ${env.BUILD_NUMBER}"
 	                echo "Jenkins JOB Name ${env.testing}"
 	                echo "GitHub BranhName ${env.main}"
 	                checkout scm
