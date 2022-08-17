@@ -97,24 +97,24 @@ pipeline {
 	
 
 	         // Deploy Stages
-	        stage('Deploy to UAT') {
-	            steps {
-	                echo "Deploying ${main} to UAT "
-                UiPathDeploy (
-                packagePath: "Output\\${env.1.0.114420490}",
-                orchestratorAddress: '${https://cloud.uipath.com/ssstkwxnjg/nikita/orchestrator_}',
-                orchestratorTenant: "${nikita}",
-                folderName: "${IT}",
-//                 environments: 'DEV',
-                //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
-                credentials: Token(accountName: "${nikita}", credentialsId: 'MGUC531S9667tDKUAuHeqZxpbXKYdViAL4OMKZVLrCRbK'), 
-				traceLevel: 'None',
-				entryPointPaths: 'TestCase1.xaml'
+// 	        stage('Deploy to UAT') {
+// 	            steps {
+// 	                echo "Deploying ${main} to UAT "
+//                 UiPathDeploy (
+//                 packagePath: "Output\\${env.1.0.114420490}",
+//                 orchestratorAddress: '${https://cloud.uipath.com/ssstkwxnjg/nikita/orchestrator_}',
+//                 orchestratorTenant: "${nikita}",
+//                 folderName: "${IT}",
+// //                 environments: 'DEV',
+//                 //credentials: [$class: 'UserPassAuthenticationEntry', credentialsId: 'APIUserKey']
+//                 credentials: Token(accountName: "${nikita}", credentialsId: 'MGUC531S9667tDKUAuHeqZxpbXKYdViAL4OMKZVLrCRbK'), 
+// 				traceLevel: 'None',
+// 				entryPointPaths: 'TestCase1.xaml'
 	
 
-	        )
-	            }
-	        }
+// 	        )
+// 	            }
+// 	        }
 	
 
 	
