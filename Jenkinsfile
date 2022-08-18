@@ -14,7 +14,7 @@ pipeline {
       stage('Build') {
         steps {
           echo 'Building...'
-          echo "Running ${1} ${TestCase1} on ${NODE_NAME} and JOB ${testing}"
+          echo "Running ${1.0.114420490} ${TestCase1} on ${NODE_NAME} and JOB ${testing}"
         }
    }
    stage('Test') {
