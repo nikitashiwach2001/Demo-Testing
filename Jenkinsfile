@@ -14,7 +14,7 @@ pipeline {
       stage('Build') {
         steps {
           echo 'Building...'
-          echo "Running ${BUILD_ID} ${BUILD_DISPLAY_NAME} on ${NODE_NAME} and JOB ${JOB_NAME}"
+          echo "Running ${1} ${TestCase1} on ${NODE_NAME} and JOB ${testing}"
         }
    }
    stage('Test') {
