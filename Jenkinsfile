@@ -1,11 +1,20 @@
 pipeline {
    agent any
+   environment {
+// 	        MAJOR = '1'
+// 	        MINOR = '1'
+	        //Orchestrator Services
+	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
+	        UIPATH_ORCH_LOGICAL_NAME = "nikita"
+	        UIPATH_ORCH_TENANT_NAME = "nikita"
+	        UIPATH_ORCH_FOLDER_NAME = "IT"
+	    }
 
    stages {
       stage('Build') {
         steps {
           echo 'Building...'
-          echo "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
+          echo "Running ${BUILD_ID} ${BUILD_DISPLAY_NAME} on ${NODE_NAME} and JOB ${JOB_NAME}"
         }
    }
    stage('Test') {
