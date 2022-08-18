@@ -63,11 +63,11 @@ pipeline {
 	        // Printing Basic Information
 	        stage('Preparing'){
 	            steps {
-	                echo "Jenkins Home ${env.JENKINS_HOME}"
+	                echo "Jenkins Home ${JENKINS_HOME}"
 	                echo 'Jenkins URL ${env.http://localhost:8080/job/Testing/configure}'
-	                echo "Jenkins JOB Number ${env.BUILD_NUMBER}"
-	                echo "Jenkins JOB Name ${env.testing}"
-	                echo "GitHub BranhName ${env.main}"
+	                echo "Jenkins JOB Number ${BUILD_NUMBER}"
+	                echo "Jenkins JOB Name ${testing}"
+	                echo "GitHub BranhName ${main}"
 	                checkout scm
 	
 
@@ -80,9 +80,9 @@ pipeline {
 	            steps {
 	                echo "Building..with ${WORKSPACE}"
 	                UiPathPack (
-                      outputPath: "Output\\${env.1.0.114420490}",
+                      outputPath: "Output\\${1.0.114420490}",
                       projectJsonPath: "project.json",
-                      version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${env.1.0.114420490}"],
+                      version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${1.0.114420490}"],
                       useOrchestrator: true,
 					  traceLevel: 'None'
         )
@@ -144,7 +144,7 @@ pipeline {
 	            echo 'Deployment has been completed!'
 	        }
 	        failure {
-	          echo "FAILED: Job '${env.JOB_NAME} [${env.1.0.114420490}]' (${env.JOB_DISPLAY_URL})"
+	          echo "FAILED: Job '${JOB_NAME} [${1.0.114420490}]' (${JOB_DISPLAY_URL})"
 	        }
 	        always {
 	            /* Clean workspace if success */
