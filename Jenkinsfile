@@ -47,8 +47,7 @@ pipeline {
 
     	        // Environment Variables
 	        environment {
-	        MAJOR = '1'
-	        MINOR = '0'
+	       
 	        //Orchestrator Services
 	        UIPATH_ORCH_URL = "https://cloud.uipath.com/"
 	        UIPATH_ORCH_LOGICAL_NAME = "nikita"
@@ -60,19 +59,7 @@ pipeline {
 	    stages {
 	
 
-	        // Printing Basic Information
-	        stage('Preparing'){
-	            steps {
-	                echo "Jenkins Home ${JENKINS_HOME}"
-	                echo 'Jenkins URL ${env.http://localhost:8080/job/Testing/configure}'
-	                echo "Jenkins JOB Number ${BUILD_NUMBER}"
-	                echo "Jenkins JOB Name ${testing}"
-	                echo "GitHub BranhName ${main}"
-	                checkout scm
-	
 
-	            }
-	        }
 	
 
 	         // Build Stages
@@ -80,9 +67,9 @@ pipeline {
 	            steps {
 	                echo "Building..with ${WORKSPACE}"
 	                UiPathPack (
-                      outputPath: "Output\\${1.0.114420490}",
+//                       outputPath: "Output\\${1.0.114420490}",
                       projectJsonPath: "project.json",
-                      version: [$class: 'ManualVersionEntry', version: "${MAJOR}.${MINOR}.${1.0.114420490}"],
+                      version: [$class: 'ManualVersionEntry'],
                       useOrchestrator: true,
 					  traceLevel: 'None'
         )
@@ -144,7 +131,7 @@ pipeline {
 	            echo 'Deployment has been completed!'
 	        }
 	        failure {
-	          echo "FAILED: Job '${JOB_NAME} [${1.0.114420490}]' (${JOB_DISPLAY_URL})"
+	          echo "FAILED: Job '${testing} ' (${JOB_DISPLAY_URL})"
 	        }
 	        always {
 	            /* Clean workspace if success */
